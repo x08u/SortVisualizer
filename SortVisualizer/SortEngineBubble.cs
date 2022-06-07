@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace SortVisualizer
 {
@@ -13,6 +14,7 @@ namespace SortVisualizer
         private int MaxVal;
         Brush WhiteBrush = new System.Drawing.SolidBrush(System.Drawing.Color.White);
         Brush BlackBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
+
 
         public SortEngineBubble(int[] TheArray_In, Graphics g_In, int MaxVal_In)
         {
@@ -27,6 +29,13 @@ namespace SortVisualizer
             {
                 if (TheArray[i] > TheArray[i + 1])
                 {
+                    Label mylab = new Label();
+                    mylab.Text = "GeeksforGeeks";
+                    mylab.Location = new Point(222, 90);
+                    mylab.AutoSize = true;
+                    mylab.Font = new Font("Calibri", 18);
+                    mylab.ForeColor = Color.Green;
+                    mylab.Padding = new Padding(6);
                     Swap(i, i + 1);
                 }
             }
